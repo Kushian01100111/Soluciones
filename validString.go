@@ -1,4 +1,4 @@
-
+package main
 
 func isVowel(b rune) bool {
 	return b == 65 || b == 69 || b == 73 || b == 79 || b == 85 ||

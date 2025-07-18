@@ -1,3 +1,5 @@
+package main
+
 func max(n int, m int) int {
 	if n > m {
 		return n

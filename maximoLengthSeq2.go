@@ -1,11 +1,6 @@
-func max(n int, m int) int {
-	if n > m {
-		return n
-	}
-	return m
-}
+package main
 
-func maximumLength(nums []int, k int) int {
+func maximumLengthK(nums []int, k int) int {
 	modValues := make([][]int, k)
 
 	for i := 0; i < k; i++ {
