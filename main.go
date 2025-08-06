@@ -3,10 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	fruits := []int{4, 2, 5}
-	baskets := []int{3, 5, 4}
+	baskets := []Basket{
+		{Val: 3, Index: 2},
+		{Val: 1, Index: 0},
+		{Val: 2, Index: 1},
+	}
 
-	res := numOfUnplacedFruits(fruits, baskets)
+	sortedByVal := mergeSortInt(baskets, "primero")   // ordena por Val
+	sortedByIndex := mergeSortInt(baskets, "segundo") // ordena por Index
 
-	fmt.Printf("%v", res)
+	fmt.Printf("%v", sortedByVal)
+	fmt.Printf("%v", sortedByIndex)
 }
