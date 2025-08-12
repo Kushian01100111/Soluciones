@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	n := 5
-	test := generate(n)
+	stock := []int{2, 4, 1}
+	test := maxProfit(stock)
 	fmt.Printf("%v", test)
 }
