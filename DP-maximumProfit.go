@@ -3,18 +3,15 @@ package main
 import "math"
 
 func maxProfit(prices []int) int {
-	bestProfit := math.MinInt32
-
-	for i, val := range prices {
-		for j := i + 1; j < len(prices); j++ {
-			currProfit := prices[j] - val
-			if currProfit > bestProfit {
-				bestProfit = currProfit
-			}
+	cheapestDay := math.MaxInt32
+	maxProfit := 0
+	for _, val := range prices {
+		currProfit := val - cheapestDay
+		if val < cheapestDay {
+			cheapestDay = val
+		} else if currProfit > maxProfit {
+			maxProfit = currProfit
 		}
 	}
-	if bestProfit > 0 {
-		return bestProfit
-	}
-	return 0
+	return maxProfit
 }
