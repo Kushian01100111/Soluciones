@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	n := 5
-	test := countBits(n)
+	t := "ahbgdc"
+	s := "abc"
+	test := isSubsequence(s, t)
 	fmt.Printf("%v", test)
 }
