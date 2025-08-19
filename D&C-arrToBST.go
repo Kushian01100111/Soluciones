@@ -1,20 +1,50 @@
 package main
 
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
 
-func balancing(tree *TreeNode, l int) *TreeNode {
-	return nil
+func add(num int, tree *TreeNode) {
+}
+
+func recursiveCall(nums []int, tree *TreeNode) {
+	l := len(nums)
+	if l > 2 {
+		left := nums[0 : l/2]
+		right := nums[l/2:]
+		recursiveCall(left, tree)
+		recursiveCall(right, tree)
+	}
+
+	if l == 1 {
+		add(nums[0], tree)
+	}
+	add(nums[1], tree)
+	add(nums[0], tree)
 }
 
 func sortedArrayToBST(nums []int) *TreeNode {
-	tree := &TreeNode{}
+	l := len(nums)
+	middleValue := nums[l/2]
+	tree := &TreeNode{Val: middleValue, Left: nil, Right: nil}
 
-	for i := 0; i < len(nums); i++ {
-
+	if l > 2 {
+		left := nums[0 : (l/2)-1]
+		right := nums[(l/2)+1:]
+		recursiveCall(left, tree)
+		recursiveCall(right, tree)
+	} else if l == 2 {
+		tree.Left = &TreeNode{Val: nums[0], Left: nil, Right: nil}
 	}
 
 	return tree
