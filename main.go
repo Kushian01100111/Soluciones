@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{1, 100, 1, 1, 1, 100, 1, 1, 100, 1}
-	test := minCostClimbingStairs(arr)
+	arr := []int{0, 1, 2, 3, 4, 5}
+	test := sortedArrayToBST(arr)
 	fmt.Printf("%v", test)
 }
